@@ -1,0 +1,5 @@
+Read    34894 chars from http://news.ycombinator.com/
+Read   590858 chars from https://www.yahoo.com/
+Read   237747 chars from https://github.com/
+Read     1619 chars from http://deelay.me/5000/http://deelay.me/
+Ran in  6.158 secs
