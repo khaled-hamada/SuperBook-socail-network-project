@@ -15,12 +15,23 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+
+from rest_framework.documentation import include_docs_urls
+
 from profiles.views import HomePage
+
+
 admin.site.site_header = "SuperBook Secret Area"
 
 urlpatterns = [
     path('', HomePage.as_view(), name='home'),
     path('admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
     path('palyaway5DMN/', admin.site.urls),
-    path('forms/', include('formschapter.urls', namespace='formschapter'))
-]
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('users/', include('profiles.urls')),
+    path('forms/', include('formschapter.urls', namespace='formschapter')),
+    path('api/posts/', include('viewschapter.urls', namespace='viewschapter')),
+    path('', include('viewschapter.urls', namespace='viewschapter')),
+    path('api-docs/', include_docs_urls(title = 'Website API interface')),
+    
+]   

@@ -40,12 +40,16 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
     'admin_honeypot',
+    'rest_framework',
+    'crispy_forms',
+    'widget_tweaks',
 
     'profiles.apps.ProfilesConfig',
     'posts.apps.PostsConfig',
     'sightings',
     'formschapter',
-    'crispy_forms',
+    'viewschapter',
+  
 
 ]
 
@@ -139,3 +143,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Crispy Form Theme - Bootstrap 4
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+#DJango REST Frame work settings 
+REST_FRAMEWORK = {
+    #allow unauth. access to our apis 
+    'DEFAULT_PERMISSION_CLASSESS':[
+       ' rest_framework.permissions.AllowAny',
+    ]
+}
