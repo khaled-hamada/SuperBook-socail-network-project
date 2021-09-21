@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-=ed17cu2jw_+nn*ev%zvn6+urydl7*p7s5z1d(#1#9s=drk8@d
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
-
+TEMPLATE_DEBUG = True
 ALLOWED_HOSTS = []
 
 
@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
+
+    'debug_toolbar',
+    'django_extensions',
     'admin_honeypot',
     'rest_framework',
     'crispy_forms',
@@ -61,6 +63,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
+
 ]
 
 ROOT_URLCONF = 'superbook.urls'

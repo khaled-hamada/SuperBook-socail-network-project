@@ -28,6 +28,7 @@
             <div class="post-meta mt-4">
               <p>{{ item.like_set.count }} Like{{ item.like_set.count|pluralize }} | Posted on: {{ item.modified}}</p>
             </div>
+           
             {% for comment in item.comment_set.all %}
               <div class="media mt-3">
                 <a class="pr-3" href="#">

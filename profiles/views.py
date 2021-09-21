@@ -14,7 +14,7 @@ class HomePage(generic.TemplateView):
 class ShowProfile(LoginRequiredMixin, generic.TemplateView):
     template_name = "profiles/show_profile.html"
     http_method_names = ['get']
-
+    
     def get(self, request, *args, **kwargs):
         slug = self.kwargs.get('slug')
         if slug:

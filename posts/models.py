@@ -54,3 +54,5 @@ class Like(models.Model):
 
     def __str__(self):
         return "{} liked <{}>".format(self.liked_by, self.post)
+    class Meta:
+        unique_together = ('liked_by', 'post')
