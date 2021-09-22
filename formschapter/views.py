@@ -1,4 +1,6 @@
+import re
 from django.urls.base import reverse_lazy
+from django.http import HttpResponse
 from .forms import PersonDetailForm, UnSubscribeForm,\
      SubscribeForm, ImportantDateForm
 from .models import ImportantDate
@@ -104,3 +106,27 @@ class ImpDateDelete(generic.DeleteView):
 
 class ImpDateList(generic.ListView):
     model = ImportantDate
+
+
+## secutiry chapter 12 
+class XSSDemoView(generic.View):
+    
+    def get(self, request):
+        """
+            this code is insecure and prone to xss attacks
+            do not ever never use it
+        """
+        if 'q' in request.GET:
+            # manually avoid this attack by filtering the input 
+            # q = re.search('\w*', request.GET['q'])
+            return HttpResponse ("searched for {}".format(
+                request.GET['q']
+            ))
+        else:
+            return HttpResponse("""
+                <form method= "get"> 
+               
+                <input type="text" name="q" placeholder="Search" value="" >
+                <input type="submit" value="Search" name="searchbtn">
+                </form>
+            """)

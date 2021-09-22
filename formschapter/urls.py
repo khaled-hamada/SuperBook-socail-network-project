@@ -33,4 +33,7 @@ urlpatterns = [
     path('impdates/',
          views.ImpDateList.as_view(),
          name="impdate-list"),
+    path('xssattack/',
+         views.XSSDemoView.as_view(),
+         name="xss"),
 ]

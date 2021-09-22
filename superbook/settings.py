@@ -155,3 +155,7 @@ REST_FRAMEWORK = {
        ' rest_framework.permissions.AllowAny',
     ]
 }
+
+
+# What user sees after logging in
+LOGIN_REDIRECT_URL = "viewschapter:myfeed"
