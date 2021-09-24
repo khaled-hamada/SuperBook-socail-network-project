@@ -83,3 +83,5 @@ class AboutView(TemplateView):
 
 class ArticleView(TemplateView):
     template_name = "article.html"
+
+

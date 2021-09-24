@@ -117,6 +117,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+## caching session data 
+SESSION_BACKEND =' django.contrib.sessions.backends.cache'
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
